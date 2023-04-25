@@ -6,7 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
 } from 'firebase/auth';
 import {
   getFirestore,
@@ -16,36 +16,41 @@ import {
   collection,
   writeBatch,
   query,
-  getDocs
+  getDocs,
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDdeLoal4asNl0Da8hrzxlMjUUHVvkLG4k",
-  authDomain: "crwn-clothing-db-bcadd.firebaseapp.com",
-  projectId: "crwn-clothing-db-bcadd",
-  storageBucket: "crwn-clothing-db-bcadd.appspot.com",
-  messagingSenderId: "768372815255",
-  appId: "1:768372815255:web:6db42f4f564d6c0ac200d2"
+  apiKey: 'AIzaSyDdeLoal4asNl0Da8hrzxlMjUUHVvkLG4k',
+  authDomain: 'crwn-clothing-db-bcadd.firebaseapp.com',
+  projectId: 'crwn-clothing-db-bcadd',
+  storageBucket: 'crwn-clothing-db-bcadd.appspot.com',
+  messagingSenderId: '768372815255',
+  appId: '1:768372815255:web:6db42f4f564d6c0ac200d2',
 };
 
 initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({
-  prompt: 'select_account'
+  prompt: 'select_account',
 });
 
 export const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
-export const signInWithGoogleRedirect = () => signInWithGoogleRedirect(auth, googleProvider);
+export const signInWithGooglePopup = () =>
+  signInWithPopup(auth, googleProvider);
+export const signInWithGoogleRedirect = () =>
+  signInWithGoogleRedirect(auth, googleProvider);
 
 export const db = getFirestore();
 
-export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
   const collectionRef = collection(db, collectionKey);
   const batch = writeBatch(db);
 
-  objectsToAdd.forEach(object => {
+  objectsToAdd.forEach((object) => {
     const docRef = doc(collectionRef, object.title.toLowerCase());
     batch.set(docRef, object);
   });
@@ -58,16 +63,13 @@ export const getCategoriesAndDocuments = async () => {
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
-  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
-    const { title, items } = docSnapshot.data();
-    acc[title.toLowerCase()] = items;
-    return acc;
-  }, {});
-
-  return categoryMap;
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
 };
 
-export const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
+export const createUserDocumentFromAuth = async (
+  userAuth,
+  additionalInformation = {}
+) => {
   if (!userAuth) return;
 
   const userDocRef = doc(db, 'users', userAuth.uid);
@@ -76,14 +78,14 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
   if (!userSnapshot.exists()) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
-    
+
     try {
       await setDoc(userDocRef, {
         displayName,
         email,
         createdAt,
         ...additionalInformation,
-      })
+      });
     } catch (error) {
       console.log('error creating the user', error.message);
     }
@@ -96,14 +98,15 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
 
   return await createUserWithEmailAndPassword(auth, email, password);
-}
+};
 
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
 
   return await signInWithEmailAndPassword(auth, email, password);
-}
+};
 
 export const signOutUser = async () => await signOut(auth);
 
-export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
