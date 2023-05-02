@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 
-import { selectCartItems } from '../../store/cart/cart.selector';
 import {
   addItemToCart,
   removeItemFromCart,
