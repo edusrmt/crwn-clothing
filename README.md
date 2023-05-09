@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+<h1 align="center">
+    <img alt="CRWN" src="https://raw.githubusercontent.com/edusrmt/crwn-clothing/fb6bcf350165441e8f4e7f8d7b2f3ff6186e0963/src/assets/crown.svg" />
+	CRWN Clothing
+</h1>
+<h4 align="center">A fashion e-commerce application.</h4>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*View demonstration on [Netlify](https://crwn-clothing-edu.netlify.app/).*
 
-## Available Scripts
+## :camera: Screenshots
 
-In the project directory, you can run:
+<img alt="Application homepage" src="https://github.com/edusrmt/crwn-clothing/assets/26673580/c134f852-0dab-489d-9d6c-fe744f317db5" width="45%" />
+<img alt="Shopping page" src="https://github.com/edusrmt/crwn-clothing/assets/26673580/b0a72823-11e0-4390-a83b-8e19b3e74d6c" width="45%" />
+<img alt="Authentication page" src="https://github.com/edusrmt/crwn-clothing/assets/26673580/69868b74-44e7-4157-99f5-b7aaf50cb1b8" width="45%" />
+<img alt="Checkout page" src="https://github.com/edusrmt/crwn-clothing/assets/26673580/dd3f0154-5b93-43d9-a731-07fb705669f4" width="45%" />
 
-### `npm start`
+## :rocket: Technologies
+* This project was developed using:
+[React](https://react.dev/) | [React Router](https://reactrouter.com/en/main) | [styled-components](https://styled-components.com/) | [Redux](https://redux.js.org/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* It integrates with:
+[Firebase](https://firebase.google.com/) | [Stripe](stripe.com)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## :information_source: How to use
+_To run this project you will need [Node](nodejs.org) 14 or higher._
 
-### `npm test`
+- Download or clone the repository
+- Run `npm install` to install dependencies
+- Run `npm start` to start the application
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+Made with :heart: by Eduardo Sarmento.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![LinkedIn logo](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edu-sarmento/)
